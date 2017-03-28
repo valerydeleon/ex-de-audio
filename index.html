@@ -3,8 +3,87 @@
   <head>
     <meta charset="utf-8">
     <title>Una canción</title>
+    <style>
+    html{
+      background: -webkit-linear-gradient(left top, #42e5f4, #5b2196)
+    }
+
+    #player {
+    width: 300px;
+    height: 300px;
+    position: center;
+    top: 50%; left: 50%;
+    margin-left: 100px;
+    margin-top: 100px;
+    border-radius: 50%;
+    border: 1px solid #D0D0D0;
+    }
+      #player .coverArt {
+        width: 300px;
+        position: center;
+        top: 0;
+        left:0;
+        border-radius: 70%;
+      }
+      #progresoTrack {
+    float: absolute;
+    height: 5px;
+    width: 100%;
+    background: #00CC99;
+    cursor: pointer;
+    }
+    .controles {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    }
+    </style>
+
   </head>
   <body>
+    <div id="player" >
+      <img src="assets/img/trackArt_KylaLaGrange.png" class="coverArt" id="trackArt" width="30%" />
+      <audio id="track" src="assets/audio/kylaLaGrange_CutYourTeeth_KygoRemix.mp3" >
+      </audio>
+
+      <div class="tackInfo" >
+        <p id="tackName" ></p>
+        <p id="tackArtist" ></p>
+      </div>
+
+      <div class="TrackProgress" >
+        <input id="progresoTrack" type="range" min="0" max="" onchange="progreso()" />
+        <div id="manija" ></div>
+      </div>
+
+      <div class="controles" >
+          <button onclick="controlesDeReproduccion('stopTrack');" class="boton" > Stop </button>
+          <button onclick="saltar(-10)" class="boton" > Rew </button>
+          <button onclick="controlesDeReproduccion('pauseTrack');" class="boton" > Pause </button>
+          <button onclick="controlesDeReproduccion('playTrack');" class="boton" > Play </button>
+          <button onclick="saltar(10)" class="boton" > Fwr </button>
+          <button onclick="controlesDeReproduccion('volMenos');" class="boton" > Vol - </button>
+          <button onclick="controlesDeReproduccion('volMas');" class="boton" > Vol + </button>
+      </div>
+
+    </div>
+
+
+
+
+<!--    <iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A16U85LgpZ5AzhHNVfd7mI3" width="300" height="380" scrolling="auto" frameborder="0" allowtransparency="true"></iframe>
+-->
+
+<!--    <div id="reproductorBox">
+   </div>
+   <select  id = "selectTrack" multiple onchange="cambiarTrack(this.options[this.selectedIndex]);">
+      <option path="E:\Musica\El cuarteto de Nos\Invierno del 92 - El Cuarteto de Nos.mp3">Invierno del 92</option>
+      <option path="E:\Musica\El cuarteto de Nos\El día que Artigas se emborrachó.mp3">El dia que artigas se emborachó</option>
+      <option path="E:\Musica\El cuarteto de Nos\El Cuarteto De Nos - Nada Es Gratis En La Vida.mp3">Nada es gratis en la vida</option>
+      <option path="E:\Musica\El cuarteto de Nos\el cuarteto de nos - miguel gritar(7).mp3">Miguel Gritar</option>
+   </select>
+   <script>cargarReproductor();</script>
+-->
     <script type="text/javascript" src="assets/js/main.js" ></script>
 
   </body>
